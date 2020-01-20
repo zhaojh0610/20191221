@@ -2,10 +2,10 @@ package com.zjh.usercenter.controller;
 
 import com.zjh.usercenter.domain.entity.user.User;
 import com.zjh.usercenter.service.user.UserService;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author zhaojh
@@ -13,14 +13,17 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 2019/12/18 23:34
  */
 @RestController
-@RequestMapping(value = "/user")
+@RequestMapping(value = "/users")
+@RequiredArgsConstructor(onConstructor = @__(@Autowired))
+@Slf4j
 public class UserController {
 
-    @Autowired
-    private UserService userService;
+    private final UserService userService;
 
-    @GetMapping(value = "/find/{id}")
-    public User findById(Integer id){
+    @GetMapping(value = "/{id}")
+    public User findById(@PathVariable Integer id) {
+        log.info("我被请求了。。。");
         return userService.findById(id);
     }
+
 }
