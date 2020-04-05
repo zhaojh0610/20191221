@@ -23,6 +23,12 @@ public class UserAddBonusMsaDTO {
      * 加多少分
      */
     private Integer bonus;
-
-
+    /**
+     * 发生的事件
+     */
+    private String event;
+    /**
+     * 描述
+     */
+    private String description;
 }
