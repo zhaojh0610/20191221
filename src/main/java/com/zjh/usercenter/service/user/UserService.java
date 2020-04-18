@@ -1,10 +1,10 @@
 package com.zjh.usercenter.service.user;
 
-import com.zjh.usercenter.dao.bonusEventLog.BonusEventLogMapper;
+import com.zjh.usercenter.dao.bonuseventlog.BonusEventLogMapper;
 import com.zjh.usercenter.dao.user.UserMapper;
 import com.zjh.usercenter.domain.dto.messgeing.UserAddBonusMsaDTO;
 import com.zjh.usercenter.domain.dto.user.UserLoginDTO;
-import com.zjh.usercenter.domain.entity.bonusEventLog.BonusEventLog;
+import com.zjh.usercenter.domain.entity.bonuseventlog.BonusEventLog;
 import com.zjh.usercenter.domain.entity.user.User;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -56,7 +56,7 @@ public class UserService {
         log.info("积分添加完毕...");
     }
 
-    public User login(UserLoginDTO loginDTO,String openId) {
+    public User login(UserLoginDTO loginDTO, String openId) {
         User user = userMapper.selectOne(User.builder().wxId(openId).build());
         if (user == null) {
             User userToSave = User.builder()

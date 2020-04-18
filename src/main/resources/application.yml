@@ -15,7 +15,7 @@ spring:
         server-addr: localhost:8848
         #        指定集群名称
         cluster-name: BJ
-        namespace: 87980947-d66c-4ee5-a8b0-3b17222c464d
+#        namespace: 87980947-d66c-4ee5-a8b0-3b17222c464d
         metadata:
           version: 1.0
     stream:
@@ -32,7 +32,7 @@ spring:
     name: user-center
   zipkin:
     base-url: http://localhost:9411/
-#    discovery-client-enabled: false
+    #    discovery-client-enabled: false
     discoveryClientEnabled: false
   sleuth:
     sampler:
@@ -48,3 +48,11 @@ jwt:
   secret: asdasdasdadadsada
   # 有效期 单位秒 默认2周
   expire-time-in-second: 1209600
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always

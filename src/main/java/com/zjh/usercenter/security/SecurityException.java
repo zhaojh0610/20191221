@@ -12,6 +12,6 @@ public class SecurityException extends RuntimeException {
     }
 
     public SecurityException(String s, Throwable throwable) {
-        super(s,throwable);
+        super(s, throwable);
     }
 }

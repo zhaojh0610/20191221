@@ -37,8 +37,8 @@ public class TestController {
 
 
     @GetMapping("/find")
-    public User findById(Integer Id) {
-        return this.userService.findById(Id);
+    public User findById(Integer id) {
+        return this.userService.findById(id);
     }
 
     @GetMapping("/q")

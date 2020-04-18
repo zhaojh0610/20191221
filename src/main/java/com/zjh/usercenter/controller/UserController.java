@@ -69,7 +69,7 @@ public class UserController {
         userInfo.put("role", user.getRoles());
         //生成token
         String token = jwtOperator.generateToken(userInfo);
-        log.info("用户{}登录成功，生成的token={}，有效期到：{}",user.getWxNickname(),token,jwtOperator.getExpirationTime());
+        log.info("用户{}登录成功，生成的token={}，有效期到：{}", user.getWxNickname(), token, jwtOperator.getExpirationTime());
         //构建相应
         LoginRespDTO loginRespDTO = LoginRespDTO.builder()
                 .user(
